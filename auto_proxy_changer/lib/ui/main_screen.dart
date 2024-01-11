@@ -209,6 +209,7 @@ class _MainScreenState extends State<MainScreen> {
     removeProxyShellFilePath = "$autoProxyFolderPath/remove_proxy.sh";
     sudoProxyPassFilePath = "$autoProxyFolderPath/sudo_proxy_pass";
 
+    bool proxiesFileExist = await File(proxiesFilepath).exists();
     bool autoProxyShellFileExist = await File(autoProxyShellFilePath).exists();
     bool autoStartConfigFileExist =
         await File(autoProxyChangerConfigFilePath).exists();
@@ -224,7 +225,8 @@ class _MainScreenState extends State<MainScreen> {
         await File(removeProxyShellFilePath).exists();
     bool sudoProxyPassFileExist = await File(sudoProxyPassFilePath).exists();
 
-    return autoProxyShellFileExist &&
+    return proxiesFileExist &&
+        autoProxyShellFileExist &&
         autoStartConfigFileExist &&
         autoStartGnomeDesktopFileExist &&
         autoStartKdeDesktopFileExist &&
