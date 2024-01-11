@@ -1,0 +1,6 @@
+[Desktop Entry]
+Exec=.autoproxy/auto_proxy.sh
+Icon=dialog-scripts
+Name=auto_proxy.sh
+Type=Application
+X-KDE-AutostartScript=true
